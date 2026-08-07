@@ -13,6 +13,16 @@ interface TimelineItem {
 
 const experiences: TimelineItem[] = [
   {
+    role: "ServiceNow University Virtual Intern",
+    company: "ServiceNow University",
+    duration: "Apr 2026",
+    description: [
+      "Gained hands-on experience with ServiceNow workflows, Agentic AI, reporting, and system administration.",
+      "Worked with the Automated Test Framework and explored enterprise platform administration concepts.",
+    ],
+    skillsLearned: ["ServiceNow", "Agentic AI", "Automated Testing", "System Administration"],
+  },
+  {
     role: "Google AI Virtual Intern",
     company: "Google AI (EduSkills)",
     duration: "Apr 2025 - Jun 2025",
@@ -23,14 +33,14 @@ const experiences: TimelineItem[] = [
     skillsLearned: ["Python", "Scikit-Learn", "Machine Learning", "Feature Engineering"],
   },
   {
-    role: "ServiceNow University Virtual Intern",
-    company: "ServiceNow University",
-    duration: "Apr 2026",
+    role: "Cisco AICTE Virtual Intern",
+    company: "Cisco (AICTE)",
+    duration: "May 2024 - Jul 2024",
     description: [
-      "Gained hands-on experience with ServiceNow workflows, Agentic AI, reporting, and system administration.",
-      "Worked with the Automated Test Framework and explored enterprise platform administration concepts.",
+      "Completed comprehensive training in networking fundamentals, cybersecurity architectures, and key protocols.",
+      "Designed and simulated network topologies, subnets, and custom security rules using Cisco Packet Tracer.",
     ],
-    skillsLearned: ["ServiceNow", "Agentic AI", "Automated Testing", "System Administration"],
+    skillsLearned: ["Networking", "Cybersecurity", "Cisco Packet Tracer"],
   },
 ];
 
