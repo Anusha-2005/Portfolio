@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, Calendar, CheckCircle2 } from "lucide-react";
+import { Briefcase, Calendar, CheckCircle2, ExternalLink } from "lucide-react";
 
 interface TimelineItem {
   role: string;
@@ -9,6 +9,7 @@ interface TimelineItem {
   duration: string;
   description: string[];
   skillsLearned: string[];
+  certificateLink?: string;
 }
 
 const experiences: TimelineItem[] = [
@@ -31,6 +32,7 @@ const experiences: TimelineItem[] = [
       "Applied data preprocessing, feature engineering, and model evaluation using supervised learning techniques.",
     ],
     skillsLearned: ["Python", "Scikit-Learn", "Machine Learning", "Feature Engineering"],
+    certificateLink: "https://drive.google.com/file/d/1ZT2xn4WU3Z3V1DzxsJTebD44ejzpOgeo/view?usp=sharing",
   },
   {
     role: "Cisco AICTE Virtual Intern",
@@ -114,16 +116,29 @@ export default function Experience() {
                   ))}
                 </ul>
 
-                {/* Key Skills Tags */}
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-black/5">
-                  {exp.skillsLearned.map((skill, sIdx) => (
-                    <span
-                      key={sIdx}
-                      className="px-2.5 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono"
+                {/* Key Skills Tags & Certificate */}
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-black/5">
+                  <div className="flex flex-wrap gap-2">
+                    {exp.skillsLearned.map((skill, sIdx) => (
+                      <span
+                        key={sIdx}
+                        className="px-2.5 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 text-xs font-mono"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                  {exp.certificateLink && (
+                    <a
+                      href={exp.certificateLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:text-indigo-700 transition-colors"
                     >
-                      {skill}
-                    </span>
-                  ))}
+                      <span>Verify Certificate</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
