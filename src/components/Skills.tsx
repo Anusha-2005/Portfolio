@@ -136,31 +136,16 @@ export default function Skills() {
               </div>
 
               {/* Skills Items */}
-              <div className="space-y-4 flex-grow">
+              <div className="flex flex-wrap gap-2.5 content-start flex-grow">
                 {category.skills.map((skill, sIdx) => (
-                  <div key={sIdx} className="group flex flex-col space-y-1.5">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium text-gray-600 group-hover:text-black transition-colors">
-                        {skill.name}
-                      </span>
-                      <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">
-                        {skill.level}
-                      </span>
-                    </div>
-
-                    {/* Skill progress bar styling */}
-                    <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{
-                          width: skill.level === "Advanced" ? "90%" : "70%",
-                        }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2, delay: idx * 0.1 + sIdx * 0.05 }}
-                        className="h-full rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"
-                      />
-                    </div>
-                  </div>
+                  <motion.span
+                    key={sIdx}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="px-3 py-1.5 rounded-xl bg-slate-900/5 border border-slate-900/5 text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50/50 hover:border-indigo-200/50 transition-all duration-200 cursor-default"
+                  >
+                    {skill.name}
+                  </motion.span>
                 ))}
               </div>
             </motion.div>
