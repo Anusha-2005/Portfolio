@@ -1,0 +1,273 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "./Icons";
+import confetti from "canvas-confetti";
+
+export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage("");
+
+    // Simple validation
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setStatus("error");
+      setErrorMessage("Please fill out all fields.");
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setStatus("error");
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
+    setStatus("sending");
+
+    // Simulate sending delay
+    setTimeout(() => {
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+
+      // Trigger success confetti celebration
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ["#3b82f6", "#6366f1", "#8b5cf6"],
+      });
+    }, 1500);
+  };
+
+  return (
+    <section id="contact" className="py-20 relative bg-[#f8fafc]">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="text-xs font-semibold tracking-wider text-indigo-600 uppercase font-mono"
+          >
+            Get In Touch
+          </motion.h2>
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-slate-900"
+          >
+            Let&apos;s build <span className="text-gradient-primary">something together</span>
+          </motion.h3>
+        </div>
+
+        {/* Layout Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto">
+          {/* Left Column: Direct Info */}
+          <div className="lg:col-span-5 space-y-6 text-left">
+            <h4 className="text-xl font-bold text-slate-900 tracking-wide">
+              Contact Information
+            </h4>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Have a proposal, project details, or want to discuss machine learning setups? Fill out the form or reach out directly.
+            </p>
+
+            <div className="space-y-4 pt-4">
+              <a
+                href="mailto:2300032684cseh1@gmail.com"
+                className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/5 border border-slate-900/5 hover:border-indigo-600/20 hover:bg-slate-900/10 transition-all duration-300 group"
+              >
+                <div className="p-2.5 rounded-lg bg-indigo-600/10 border border-indigo-600/20 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                  <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 font-mono">EMAIL</div>
+                  <div className="text-sm font-semibold text-slate-900 break-all">
+                    2300032684cseh1@gmail.com
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/anusha-palaparthi-5517a034b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/5 border border-slate-900/5 hover:border-indigo-600/20 hover:bg-slate-900/10 transition-all duration-300 group"
+              >
+                <div className="p-2.5 rounded-lg bg-indigo-600/10 border border-indigo-600/20 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                  <LinkedinIcon className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 font-mono">LINKEDIN</div>
+                  <div className="text-sm font-semibold text-slate-900 break-all">
+                    anusha-palaparthi-5517a034b/
+                  </div>
+                </div>
+              </a>
+
+              <a
+                href="https://github.com/anusha-palaparthi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/5 border border-slate-900/5 hover:border-indigo-600/20 hover:bg-slate-900/10 transition-all duration-300 group"
+              >
+                <div className="p-2.5 rounded-lg bg-indigo-600/10 border border-indigo-600/20 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                  <GithubIcon className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 font-mono">GITHUB</div>
+                  <div className="text-sm font-semibold text-slate-900">
+                    github.com/anusha-palaparthi
+                  </div>
+                </div>
+              </a>
+
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/5 border border-slate-900/5">
+                <div className="p-2.5 rounded-lg bg-indigo-600/10 border border-indigo-600/20 text-indigo-600">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 font-mono">LOCATION</div>
+                  <div className="text-sm font-semibold text-slate-900">India</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Form */}
+          <div className="lg:col-span-7">
+            <div className="p-8 rounded-3xl glass-card relative h-full">
+              <AnimatePresence mode="wait">
+                {status === "success" ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex flex-col items-center justify-center text-center h-full min-h-[340px] space-y-4"
+                  >
+                    <CheckCircle2 className="w-16 h-16 text-emerald-500 animate-bounce" />
+                    <h5 className="text-2xl font-bold text-slate-900">Message Sent!</h5>
+                    <p className="text-sm text-gray-600 max-w-sm">
+                      Thank you for reaching out. Your message has been successfully delivered. I will respond to your email shortly!
+                    </p>
+                    <button
+                      onClick={() => setStatus("idle")}
+                      className="px-6 py-2.5 rounded-xl bg-slate-900/5 hover:bg-slate-900/10 text-slate-900 font-medium border border-slate-900/10 text-xs transition-colors"
+                    >
+                      Send another message
+                    </button>
+                  </motion.div>
+                ) : (
+                  <motion.form
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    onSubmit={handleSubmit}
+                    className="space-y-5 text-left"
+                  >
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label htmlFor="name" className="text-xs font-semibold text-gray-500 font-mono uppercase">
+                          Your Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          placeholder="Anusha"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-900/5 border border-slate-900/10 text-slate-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600/50 focus:ring-1 focus:ring-indigo-600/50 transition-all duration-200"
+                        />
+                      </div>
+                      <div className="space-y-1.5">
+                        <label htmlFor="email" className="text-xs font-semibold text-gray-500 font-mono uppercase">
+                          Your Email
+                        </label>
+                        <input
+                          type="type"
+                          id="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          placeholder="anusha@example.com"
+                          className="w-full px-4 py-3 rounded-xl bg-slate-900/5 border border-slate-900/10 text-slate-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600/50 focus:ring-1 focus:ring-indigo-600/50 transition-all duration-200"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label htmlFor="subject" className="text-xs font-semibold text-gray-500 font-mono uppercase">
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        placeholder="Collaboration proposal / Freelance / Inquiry"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900/5 border border-slate-900/10 text-slate-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600/50 focus:ring-1 focus:ring-indigo-600/50 transition-all duration-200"
+                      />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <label htmlFor="message" className="text-xs font-semibold text-gray-500 font-mono uppercase">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        rows={5}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        placeholder="Let me know how I can help you..."
+                        className="w-full px-4 py-3 rounded-xl bg-slate-900/5 border border-slate-900/10 text-slate-900 placeholder-gray-400 focus:outline-none focus:border-indigo-600/50 focus:ring-1 focus:ring-indigo-600/50 transition-all duration-200 resize-none"
+                      />
+                    </div>
+
+                    {status === "error" && (
+                      <div className="p-3 rounded-xl bg-red-500/5 border border-red-500/15 flex items-center gap-2 text-red-600 text-xs font-mono">
+                        <AlertCircle className="w-4.5 h-4.5" />
+                        <span>{errorMessage}</span>
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={status === "sending"}
+                      className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 disabled:from-indigo-600/50 disabled:to-blue-600/50 text-white font-semibold shadow-lg hover:shadow-indigo-500/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 cursor-pointer"
+                    >
+                      {status === "sending" ? (
+                        <>
+                          <span className="w-4 h-4 rounded-full border-2 border-white/20 border-t-white animate-spin" />
+                          <span>Sending message...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          <span>Send Message</span>
+                        </>
+                      )}
+                    </button>
+                  </motion.form>
+                )}
+              </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
