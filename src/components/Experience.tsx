@@ -22,6 +22,7 @@ const experiences: TimelineItem[] = [
       "Worked with the Automated Test Framework and explored enterprise platform administration concepts.",
     ],
     skillsLearned: ["ServiceNow", "Agentic AI", "Automated Testing", "System Administration"],
+    certificateLink: "https://drive.google.com/file/d/1gXhkq2cneVs8YmVO4P_7dQt1D_mHdcwb/view?usp=sharing",
   },
   {
     role: "Google AI Virtual Intern",
