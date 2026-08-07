@@ -63,7 +63,7 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-end gap-3">
           <div className="flex gap-4">
             <a
-              href="https://github.com/anusha-palaparthi"
+              href="https://github.com/Anusha-2005"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-slate-900/5 border border-slate-900/5 text-gray-500 hover:text-slate-900 hover:bg-slate-900/10 hover:border-slate-900/10 transition-all"

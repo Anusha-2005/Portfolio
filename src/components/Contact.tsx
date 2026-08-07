@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Phone } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 import confetti from "canvas-confetti";
 
@@ -119,7 +119,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://github.com/anusha-palaparthi"
+                href="https://github.com/Anusha-2005"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/5 border border-slate-900/5 hover:border-indigo-600/20 hover:bg-slate-900/10 transition-all duration-300 group"
@@ -130,7 +130,7 @@ export default function Contact() {
                 <div>
                   <div className="text-xs text-gray-500 font-mono">GITHUB</div>
                   <div className="text-sm font-semibold text-slate-900">
-                    github.com/anusha-palaparthi
+                    github.com/Anusha-2005
                   </div>
                 </div>
               </a>
@@ -141,9 +141,26 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-xs text-gray-500 font-mono">LOCATION</div>
-                  <div className="text-sm font-semibold text-slate-900">India</div>
+                  <div className="text-sm font-semibold text-slate-900">
+                    Vijayawada, Andhra Pradesh, India
+                  </div>
                 </div>
               </div>
+
+              <a
+                href="tel:+919727599438"
+                className="flex items-center gap-4 p-4 rounded-xl bg-slate-900/5 border border-slate-900/5 hover:border-indigo-600/20 hover:bg-slate-900/10 transition-all duration-300 group"
+              >
+                <div className="p-2.5 rounded-lg bg-indigo-600/10 border border-indigo-600/20 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 font-mono">PHONE</div>
+                  <div className="text-sm font-semibold text-slate-900">
+                    +91 97275 99438
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
 

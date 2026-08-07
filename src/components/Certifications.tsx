@@ -9,6 +9,7 @@ interface Certificate {
   id: string;
   icon: React.ReactNode;
   colorClass: string;
+  link: string;
 }
 
 const certificates: Certificate[] = [
@@ -16,29 +17,33 @@ const certificates: Certificate[] = [
     title: "Microsoft Azure Fundamentals",
     issuer: "Microsoft",
     id: "AZ-900 Verified",
-    icon: <Cloud className="w-6 h-6 text-blue-400" />,
-    colorClass: "from-blue-500/10 to-indigo-500/10 border-blue-500/20 hover:border-blue-500/40",
+    icon: <Cloud className="w-6 h-6 text-blue-500" />,
+    colorClass: "from-blue-500/5 to-indigo-500/5 border-blue-500/10 hover:border-blue-500/30",
+    link: "https://www.credly.com/badges/70da4aef-8db5-4312-8aef-31efcca8322b/public_url",
   },
   {
     title: "MongoDB Associate Developer",
     issuer: "MongoDB",
     id: "M001/M220 Verified",
-    icon: <Database className="w-6 h-6 text-emerald-400" />,
-    colorClass: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20 hover:border-emerald-500/40",
+    icon: <Database className="w-6 h-6 text-emerald-500" />,
+    colorClass: "from-emerald-500/5 to-teal-500/5 border-emerald-500/10 hover:border-emerald-500/30",
+    link: "https://www.credly.com/badges/1886d0a0-4a6e-439f-987d-fae3bc512b10/public_url",
   },
   {
     title: "Salesforce AI Associate",
     issuer: "Salesforce",
     id: "AI Associate Verified",
-    icon: <Cpu className="w-6 h-6 text-sky-400" />,
-    colorClass: "from-sky-500/10 to-blue-500/10 border-sky-500/20 hover:border-sky-500/40",
+    icon: <Cpu className="w-6 h-6 text-sky-500" />,
+    colorClass: "from-sky-500/5 to-blue-500/5 border-sky-500/10 hover:border-sky-500/30",
+    link: "https://drive.google.com/file/d/1xKBksH5G1X3j-GXEcpCeH5C-WDO7gn_F/view?usp=sharing",
   },
   {
     title: "Cambridge English B2",
     issuer: "Cambridge Assessment English",
     id: "CEFR Level B2",
-    icon: <Globe className="w-6 h-6 text-amber-400" />,
-    colorClass: "from-amber-500/10 to-orange-500/10 border-amber-500/20 hover:border-amber-500/40",
+    icon: <Globe className="w-6 h-6 text-amber-500" />,
+    colorClass: "from-amber-500/5 to-orange-500/5 border-amber-500/10 hover:border-amber-500/30",
+    link: "https://drive.google.com/file/d/1plRs0R4BJoyk6o6b5M_OKHHaSIelKorp/view?usp=sharing",
   },
 ];
 
@@ -100,17 +105,20 @@ export default function Certifications() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left"
         >
           {certificates.map((cert, idx) => (
-            <motion.div
+            <motion.a
               key={idx}
               variants={cardVariants}
-              className={`p-6 rounded-2xl glass-card flex flex-col justify-between bg-gradient-to-br border transition-all duration-300 ${cert.colorClass}`}
+              href={cert.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`p-6 rounded-2xl glass-card flex flex-col justify-between bg-gradient-to-br border transition-all duration-300 group cursor-pointer ${cert.colorClass}`}
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
                   <div className="p-2.5 rounded-xl bg-slate-900/5 border border-slate-900/5">
                     {cert.icon}
                   </div>
-                  <Award className="w-5 h-5 text-gray-600 group-hover:text-indigo-400 transition-colors" />
+                  <Award className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 transition-colors" />
                 </div>
 
                 <div className="space-y-1">
@@ -127,7 +135,7 @@ export default function Certifications() {
                 <ShieldCheck className="w-4.5 h-4.5 text-indigo-500" />
                 <span>{cert.id}</span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
       </div>

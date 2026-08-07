@@ -157,7 +157,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-1.5 text-xs text-gray-500 font-mono">
                 <TerminalIcon className="w-3 h-3" />
-                <span>anusha-palaparthi -- model-train</span>
+                <span>Anusha-2005 -- model-train</span>
               </div>
               <div className="w-8" />
             </div>

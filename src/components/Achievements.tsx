@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Code2, Trophy, Users, Star, Sparkles } from "lucide-react";
+import { Award, Code2, Trophy, Users, Star, Sparkles, Globe } from "lucide-react";
 import confetti from "canvas-confetti";
 
 interface Achievement {
@@ -18,35 +18,42 @@ const achievements: Achievement[] = [
     metric: "100+ Solved",
     subtext: "Data Structures & Algorithms",
     description: "Successfully solved over 100 coding challenges on LeetCode covering stacks, trees, dynamic programming, and binary search.",
-    icon: <Code2 className="w-6 h-6 text-orange-400" />,
+    icon: <Code2 className="w-6 h-6 text-orange-500" />,
   },
   {
     title: "CodeChef Competitor",
     metric: "1 Star coder",
     subtext: "Competitive Programming",
     description: "Participated in monthly coding contests, practicing high-speed algorithmic thinking, complexity optimization, and debugging.",
-    icon: <Star className="w-6 h-6 text-yellow-400" />,
+    icon: <Star className="w-6 h-6 text-yellow-500" />,
   },
   {
     title: "Smart Interviews",
     metric: "Top 300",
     subtext: "Ranked among participants",
     description: "Ranked in the top tier of competitive coding sprints during the comprehensive Smart Interviews academy training.",
-    icon: <Trophy className="w-6 h-6 text-indigo-400" />,
+    icon: <Trophy className="w-6 h-6 text-indigo-500" />,
   },
   {
-    title: "Collaborative Sprints",
-    metric: "Hackathons",
-    subtext: "Rapid Prototype Builder",
-    description: "Collaborated in multi-disciplinary developer groups to brainstorm, design, and prototype AI tools in 36-hour sprint contests.",
-    icon: <Users className="w-6 h-6 text-blue-400" />,
+    title: "University Hackathons",
+    metric: "Collaborator",
+    subtext: "Leadership & Sprints",
+    description: "Participated in university hackathons, collaborating with teams to develop innovative software solutions.",
+    icon: <Users className="w-6 h-6 text-blue-500" />,
   },
   {
-    title: "Scholastic Community",
-    metric: "Academic Member",
-    subtext: "Tech Community Contributor",
-    description: "Engaged in scholastic research circles, presenting technical papers and conducting workshops on machine learning foundations.",
-    icon: <Award className="w-6 h-6 text-purple-400" />,
+    title: "Aparmaya Club Core Member",
+    metric: "Core Organizer",
+    subtext: "KL University Leadership",
+    description: "Contributed to organizing technical events and student engagement activities as a core member of the Aparmaya Club.",
+    icon: <Award className="w-6 h-6 text-purple-500" />,
+  },
+  {
+    title: "Surabhi International Fest",
+    metric: "Volunteer",
+    subtext: "Event Coordination",
+    description: "Assisted in event coordination and participant management during the Surabhi International Fest.",
+    icon: <Globe className="w-6 h-6 text-teal-500" />,
   },
 ];
 

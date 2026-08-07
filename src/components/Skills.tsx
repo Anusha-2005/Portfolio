@@ -17,38 +17,41 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     title: "Programming Languages",
-    icon: <Terminal className="w-5 h-5 text-blue-400" />,
+    icon: <Terminal className="w-5 h-5 text-blue-500" />,
     skills: [
       { name: "Python", level: "Advanced" },
       { name: "C++", level: "Intermediate" },
-      { name: "SQL", level: "Advanced" },
+      { name: "C", level: "Intermediate" },
     ],
   },
   {
-    title: "Web Technologies & Frameworks",
-    icon: <Globe className="w-5 h-5 text-indigo-400" />,
+    title: "AI/ML & Databases",
+    icon: <BrainCircuit className="w-5 h-5 text-purple-500" />,
     skills: [
-      { name: "Next.js", level: "Advanced" },
-      { name: "React", level: "Advanced" },
-      { name: "Node.js", level: "Intermediate" },
-    ],
-  },
-  {
-    title: "Machine Learning & AI",
-    icon: <BrainCircuit className="w-5 h-5 text-purple-400" />,
-    skills: [
-      { name: "Machine Learning", level: "Advanced" },
       { name: "Scikit-learn", level: "Advanced" },
+      { name: "Pandas", level: "Advanced" },
+      { name: "NumPy", level: "Advanced" },
+      { name: "MySQL", level: "Advanced" },
+      { name: "MongoDB", level: "Intermediate" },
     ],
   },
   {
-    title: "Databases & Dev Tools",
-    icon: <Database className="w-5 h-5 text-teal-400" />,
+    title: "Core Concepts",
+    icon: <Database className="w-5 h-5 text-teal-500" />,
     skills: [
-      { name: "Docker", level: "Intermediate" },
+      { name: "Data Structures & Algorithms", level: "Advanced" },
+      { name: "Object-Oriented Programming (OOP)", level: "Advanced" },
+      { name: "DBMS", level: "Advanced" },
+    ],
+  },
+  {
+    title: "Web Technologies & Tools",
+    icon: <Globe className="w-5 h-5 text-indigo-500" />,
+    skills: [
+      { name: "React", level: "Advanced" },
+      { name: "HTML & CSS", level: "Advanced" },
       { name: "Git", level: "Advanced" },
-      { name: "MongoDB", level: "Intermediate" },
-      { name: "MySQL", level: "Advanced" },
+      { name: "VS Code", level: "Advanced" },
     ],
   },
 ];

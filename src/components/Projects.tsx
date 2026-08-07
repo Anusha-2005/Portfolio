@@ -20,7 +20,7 @@ const projects: Project[] = [
     description: "An AI-powered adaptive learning platform designed to customize curriculum paths in real-time. Features interactive student dashboards, diagnostic skill graphs, and automated content recommendations tailored to learning speeds.",
     image: "/learnpulse.png",
     techStack: ["Next.js", "FastAPI", "Scikit-learn", "MongoDB", "Tailwind CSS"],
-    githubLink: "https://github.com/anusha-palaparthi/learnpulse",
+    githubLink: "https://github.com/Anusha-2005/LearnPulse",
     demoLink: "https://learnpulse-demo.vercel.app",
   },
   {
@@ -28,7 +28,7 @@ const projects: Project[] = [
     description: "A high-performance job board utilizing natural language processing pipelines to match job seekers' resumes with employment requirements. Reduces manual screening times by ranking applicants using semantic affinity scores.",
     image: "/arbeit.png",
     techStack: ["React", "Node.js", "Express", "MySQL", "Docker", "NLP"],
-    githubLink: "https://github.com/anusha-palaparthi/arbeit-ai",
+    githubLink: "https://github.com/Anusha-2005/Arbeit-AI",
     demoLink: "https://arbeit-ai-demo.vercel.app",
   },
   {
@@ -36,7 +36,7 @@ const projects: Project[] = [
     description: "An enterprise-grade DevOps infrastructure for microservices. Automates linting, unit testing, Docker image building, and container deployments across environments, featuring self-healing status logs.",
     image: "/pipeline.png",
     techStack: ["Docker", "Git", "GitHub Actions", "Node.js", "Python", "Shell"],
-    githubLink: "https://github.com/anusha-palaparthi/cicd-pipeline",
+    githubLink: "https://github.com/Anusha-2005/cicd-pipeline",
     demoLink: "https://pipeline-demo.vercel.app",
   },
   {
@@ -44,7 +44,7 @@ const projects: Project[] = [
     description: "A collaborative project planning application featuring real-time state synchronization, glassmorphic kanban boards, team velocity charts, and drag-and-drop task card controls.",
     image: "/taskmanager.png",
     techStack: ["Next.js", "React", "Node.js", "Socket.io", "MongoDB", "Framer Motion"],
-    githubLink: "https://github.com/anusha-palaparthi/task-manager",
+    githubLink: "https://github.com/Anusha-2005/task-manager",
     demoLink: "https://task-manager-demo.vercel.app",
   },
 ];

@@ -13,16 +13,24 @@ interface TimelineItem {
 
 const experiences: TimelineItem[] = [
   {
-    role: "AI & Machine Learning Intern",
-    company: "Google (Virtual Internship)",
-    duration: "June 2025 - August 2025",
+    role: "Google AI Virtual Intern",
+    company: "Google AI (EduSkills)",
+    duration: "Apr 2025 - Jun 2025",
     description: [
-      "Gained hands-on experience with production-level machine learning models, neural network layers, and hyperparameter optimization strategies.",
-      "Developed regression and classification models using TensorFlow and PyTorch, analyzing performance using AUC-ROC, F1-Score, and confusion matrices.",
-      "Engineered automated data preprocessing pipelines, handling outlier detection, multi-modal feature scaling, and categorical encoding.",
-      "Learned best practices for scalable model deployments, distributed training methodologies, and data governance standards.",
+      "Developed and evaluated machine learning models using Python and Scikit-learn on real-world datasets.",
+      "Applied data preprocessing, feature engineering, and model evaluation using supervised learning techniques.",
     ],
-    skillsLearned: ["TensorFlow", "PyTorch", "Model Evaluation", "Feature Engineering", "Neural Networks"],
+    skillsLearned: ["Python", "Scikit-Learn", "Machine Learning", "Feature Engineering"],
+  },
+  {
+    role: "ServiceNow University Virtual Intern",
+    company: "ServiceNow University",
+    duration: "Apr 2026",
+    description: [
+      "Gained hands-on experience with ServiceNow workflows, Agentic AI, reporting, and system administration.",
+      "Worked with the Automated Test Framework and explored enterprise platform administration concepts.",
+    ],
+    skillsLearned: ["ServiceNow", "Agentic AI", "Automated Testing", "System Administration"],
   },
 ];
 
