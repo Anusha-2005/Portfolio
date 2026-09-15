@@ -16,10 +16,10 @@ const certificates: Certificate[] = [
   {
     title: "AWS Cloud Practitioner",
     issuer: "Amazon Web Services",
-    id: "AWS Certified",
+    id: "AWS Verified",
     icon: <Cpu className="w-6 h-6 text-amber-500" />,
     colorClass: "from-amber-500/5 to-orange-500/5 border-amber-500/20 hover:border-amber-500/40",
-    link: "https://aws.amazon.com/certification/",
+    link: "https://www.credly.com/badges/a2ba79dc-02a3-49a1-9749-15809ff56cf1/public_url",
   },
   {
     title: "Microsoft Azure Fundamentals",
