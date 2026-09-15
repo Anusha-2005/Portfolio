@@ -11,21 +11,18 @@ export default function Resume() {
       institution: "K L University",
       duration: "2023 – Present",
       grade: "CGPA: 9.43 / 10",
-      details: "Focusing on Software & Application Engineering, Data Structures & Algorithms, Object-Oriented Programming, REST APIs, DBMS, and Machine Learning.",
     },
     {
       degree: "Senior Secondary (Class XII CBSE)",
       institution: "Central Board of Secondary Education",
       duration: "Completed 2023",
       grade: "Percentage: 80.3%",
-      details: "Mathematics, Physics, Chemistry, and Computer Science fundamentals.",
     },
     {
       degree: "Secondary School (Class X)",
       institution: "Sarla Higher Secondary School",
       duration: "Completed 2021",
       grade: "Percentage: 85%",
-      details: "Achieved 85% with a strong foundation in Mathematics, Science, and core academics.",
     },
   ];
 
@@ -94,10 +91,6 @@ export default function Resume() {
                 <div className="inline-block px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 text-xs font-mono font-bold">
                   {edu.grade}
                 </div>
-
-                <p className="text-sm text-slate-600 leading-relaxed pt-1">
-                  {edu.details}
-                </p>
               </motion.div>
             ))}
           </div>
