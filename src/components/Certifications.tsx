@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cloud, Database, Globe, Award, ShieldCheck, Cpu, Code } from "lucide-react";
+import { Cloud, Database, Globe, Award, ShieldCheck, Cpu, Code, Sparkles } from "lucide-react";
 
 interface Certificate {
   title: string;
@@ -28,6 +28,14 @@ const certificates: Certificate[] = [
     icon: <Cloud className="w-6 h-6 text-blue-500" />,
     colorClass: "from-blue-500/5 to-indigo-500/5 border-blue-500/20 hover:border-blue-500/40",
     link: "https://www.credly.com/badges/70da4aef-8db5-4312-8aef-31efcca8322b/public_url",
+  },
+  {
+    title: "Salesforce AI Associate",
+    issuer: "Salesforce",
+    id: "Salesforce Certified",
+    icon: <Sparkles className="w-6 h-6 text-sky-500" />,
+    colorClass: "from-sky-500/5 to-indigo-500/5 border-sky-500/20 hover:border-sky-500/40",
+    link: "https://drive.google.com/file/d/1xKBksH5G1X3j-GXEcpCeH5C-WDO7gn_F/view?usp=sharing",
   },
   {
     title: "Aviatrix Certified Engineer",
