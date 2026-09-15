@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cloud, Database, Globe, Award, ShieldCheck, Cpu } from "lucide-react";
+import { Cloud, Database, Globe, Award, ShieldCheck, Cpu, Code } from "lucide-react";
 
 interface Certificate {
   title: string;
@@ -30,12 +30,28 @@ const certificates: Certificate[] = [
     link: "https://www.credly.com/badges/70da4aef-8db5-4312-8aef-31efcca8322b/public_url",
   },
   {
+    title: "Aviatrix Certified Engineer",
+    issuer: "Aviatrix",
+    id: "Multicloud Network Associate",
+    icon: <Cloud className="w-6 h-6 text-sky-500" />,
+    colorClass: "from-sky-500/5 to-blue-500/5 border-sky-500/20 hover:border-sky-500/40",
+    link: "https://drive.google.com/file/d/1cO2WD3IdArRTxaRUiNnFbtd2S8QyLm0Y/view?usp=sharing",
+  },
+  {
     title: "MongoDB Associate Developer",
     issuer: "MongoDB",
     id: "M001/M220 Verified",
     icon: <Database className="w-6 h-6 text-emerald-500" />,
     colorClass: "from-emerald-500/5 to-teal-500/5 border-emerald-500/20 hover:border-emerald-500/40",
     link: "https://www.credly.com/badges/1886d0a0-4a6e-439f-987d-fae3bc512b10/public_url",
+  },
+  {
+    title: "Software Engineer",
+    issuer: "HackerRank",
+    id: "HackerRank Verified",
+    icon: <Code className="w-6 h-6 text-emerald-500" />,
+    colorClass: "from-emerald-500/5 to-teal-500/5 border-emerald-500/20 hover:border-emerald-500/40",
+    link: "https://drive.google.com/file/d/1SunVGNxuw6fPKvtKg3YAvwa5G4OSpQkq/view?usp=sharing",
   },
   {
     title: "Cambridge English Proficiency",
@@ -102,7 +118,7 @@ export default function Certifications() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left"
         >
           {certificates.map((cert, idx) => (
             <motion.a
