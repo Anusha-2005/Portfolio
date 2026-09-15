@@ -135,13 +135,15 @@ export default function Hero() {
               <span>GitHub</span>
             </a>
 
-            <button
-              onClick={(e) => handleScrollTo(e, "resume")}
+            <a
+              href="https://drive.google.com/file/d/1yKFExq7ilw1f_eAqMIipAh30v6Du2Cfo/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-medium border border-indigo-200 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
               <FileText className="w-4 h-4" />
               <span>Resume</span>
-            </button>
+            </a>
           </motion.div>
         </div>
 

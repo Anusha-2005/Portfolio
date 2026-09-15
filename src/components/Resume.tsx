@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Calendar, Award, ExternalLink } from "lucide-react";
+import { GraduationCap, Calendar, Award, ExternalLink, FileText } from "lucide-react";
 import { GithubIcon } from "./Icons";
 
 export default function Resume() {
@@ -125,10 +125,20 @@ export default function Resume() {
                 {/* Actions */}
                 <div className="w-full space-y-3 pt-2">
                   <a
+                    href="https://drive.google.com/file/d/1yKFExq7ilw1f_eAqMIipAh30v6Du2Cfo/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-md transition-all duration-200 cursor-pointer"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span>View / Download Resume</span>
+                    <ExternalLink className="w-3.5 h-3.5 ml-auto" />
+                  </a>
+                  <a
                     href="https://github.com/Anusha-2005"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-indigo-600 text-white text-xs font-semibold shadow-md transition-all duration-200 cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-md transition-all duration-200 cursor-pointer"
                   >
                     <GithubIcon className="w-4 h-4" />
                     <span>Explore GitHub Repositories</span>
