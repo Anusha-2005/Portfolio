@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cloud, Database, Cpu, Globe, Award, ShieldCheck } from "lucide-react";
+import { Cloud, Database, Globe, Award, ShieldCheck, Cpu } from "lucide-react";
 
 interface Certificate {
   title: string;
@@ -14,11 +14,19 @@ interface Certificate {
 
 const certificates: Certificate[] = [
   {
+    title: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    id: "AWS Certified",
+    icon: <Cpu className="w-6 h-6 text-amber-500" />,
+    colorClass: "from-amber-500/5 to-orange-500/5 border-amber-500/20 hover:border-amber-500/40",
+    link: "https://aws.amazon.com/certification/",
+  },
+  {
     title: "Microsoft Azure Fundamentals",
     issuer: "Microsoft",
     id: "AZ-900 Verified",
     icon: <Cloud className="w-6 h-6 text-blue-500" />,
-    colorClass: "from-blue-500/5 to-indigo-500/5 border-blue-500/10 hover:border-blue-500/30",
+    colorClass: "from-blue-500/5 to-indigo-500/5 border-blue-500/20 hover:border-blue-500/40",
     link: "https://www.credly.com/badges/70da4aef-8db5-4312-8aef-31efcca8322b/public_url",
   },
   {
@@ -26,23 +34,15 @@ const certificates: Certificate[] = [
     issuer: "MongoDB",
     id: "M001/M220 Verified",
     icon: <Database className="w-6 h-6 text-emerald-500" />,
-    colorClass: "from-emerald-500/5 to-teal-500/5 border-emerald-500/10 hover:border-emerald-500/30",
+    colorClass: "from-emerald-500/5 to-teal-500/5 border-emerald-500/20 hover:border-emerald-500/40",
     link: "https://www.credly.com/badges/1886d0a0-4a6e-439f-987d-fae3bc512b10/public_url",
   },
   {
-    title: "Salesforce AI Associate",
-    issuer: "Salesforce",
-    id: "AI Associate Verified",
-    icon: <Cpu className="w-6 h-6 text-sky-500" />,
-    colorClass: "from-sky-500/5 to-blue-500/5 border-sky-500/10 hover:border-sky-500/30",
-    link: "https://drive.google.com/file/d/1xKBksH5G1X3j-GXEcpCeH5C-WDO7gn_F/view?usp=sharing",
-  },
-  {
-    title: "Cambridge English B2",
+    title: "Cambridge English Proficiency",
     issuer: "Cambridge Assessment English",
     id: "CEFR Level B2",
-    icon: <Globe className="w-6 h-6 text-amber-500" />,
-    colorClass: "from-amber-500/5 to-orange-500/5 border-amber-500/10 hover:border-amber-500/30",
+    icon: <Globe className="w-6 h-6 text-indigo-500" />,
+    colorClass: "from-indigo-500/5 to-purple-500/5 border-indigo-500/20 hover:border-indigo-500/40",
     link: "https://drive.google.com/file/d/1plRs0R4BJoyk6o6b5M_OKHHaSIelKorp/view?usp=sharing",
   },
 ];
@@ -122,7 +122,7 @@ export default function Certifications() {
                 </div>
 
                 <div className="space-y-1">
-                  <span className="text-xs font-semibold tracking-wider text-gray-500 font-mono uppercase">
+                  <span className="text-xs font-semibold tracking-wider text-slate-500 font-mono uppercase">
                     {cert.issuer}
                   </span>
                   <h4 className="text-base font-bold text-slate-900 leading-snug">
@@ -131,8 +131,8 @@ export default function Certifications() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-1.5 text-xs text-indigo-600 font-mono mt-6 pt-3 border-t border-black/5">
-                <ShieldCheck className="w-4.5 h-4.5 text-indigo-500" />
+              <div className="flex items-center gap-1.5 text-xs text-indigo-600 font-mono mt-6 pt-3 border-t border-black/5 font-medium">
+                <ShieldCheck className="w-4 h-4 text-indigo-600" />
                 <span>{cert.id}</span>
               </div>
             </motion.a>

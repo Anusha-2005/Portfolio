@@ -1,58 +1,69 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Globe, BrainCircuit, Database } from "lucide-react";
-
-interface Skill {
-  name: string;
-  level: string; // e.g. "Advanced", "Intermediate"
-}
+import {
+  Code,
+  Layers,
+  Globe,
+  Boxes,
+  Database,
+  Terminal,
+  Brain,
+  Cloud,
+} from "lucide-react";
 
 interface SkillCategory {
   title: string;
   icon: React.ReactNode;
-  skills: Skill[];
+  skills: string[];
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Programming Languages",
-    icon: <Terminal className="w-5 h-5 text-blue-500" />,
+    title: "Languages",
+    icon: <Code className="w-5 h-5 text-blue-600" />,
+    skills: ["Python", "C++", "C", "SQL"],
+  },
+  {
+    title: "Software Development",
+    icon: <Layers className="w-5 h-5 text-indigo-600" />,
     skills: [
-      { name: "Python", level: "Advanced" },
-      { name: "C++", level: "Intermediate" },
-      { name: "C", level: "Intermediate" },
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "REST APIs",
+      "Backend Development",
+      "Full-Stack Development",
     ],
   },
   {
-    title: "AI/ML & Databases",
-    icon: <BrainCircuit className="w-5 h-5 text-purple-500" />,
-    skills: [
-      { name: "Scikit-learn", level: "Advanced" },
-      { name: "Pandas", level: "Advanced" },
-      { name: "NumPy", level: "Advanced" },
-      { name: "MySQL", level: "Advanced" },
-      { name: "MongoDB", level: "Intermediate" },
-    ],
+    title: "Web",
+    icon: <Globe className="w-5 h-5 text-teal-600" />,
+    skills: ["React", "Node.js", "HTML"],
   },
   {
-    title: "Core Concepts",
-    icon: <Database className="w-5 h-5 text-teal-500" />,
-    skills: [
-      { name: "Data Structures & Algorithms", level: "Advanced" },
-      { name: "Object-Oriented Programming (OOP)", level: "Advanced" },
-      { name: "DBMS", level: "Advanced" },
-    ],
+    title: "Frameworks / Libraries",
+    icon: <Boxes className="w-5 h-5 text-purple-600" />,
+    skills: ["Flask", "Scikit-learn"],
   },
   {
-    title: "Web Technologies & Tools",
-    icon: <Globe className="w-5 h-5 text-indigo-500" />,
-    skills: [
-      { name: "React", level: "Advanced" },
-      { name: "HTML & CSS", level: "Advanced" },
-      { name: "Git", level: "Advanced" },
-      { name: "VS Code", level: "Advanced" },
-    ],
+    title: "Databases",
+    icon: <Database className="w-5 h-5 text-emerald-600" />,
+    skills: ["MySQL", "MongoDB"],
+  },
+  {
+    title: "DevOps / Tools",
+    icon: <Terminal className="w-5 h-5 text-amber-600" />,
+    skills: ["Git", "GitHub Actions", "Docker", "VS Code"],
+  },
+  {
+    title: "AI / ML",
+    icon: <Brain className="w-5 h-5 text-pink-600" />,
+    skills: ["Machine Learning", "Data Preprocessing", "Model Evaluation"],
+  },
+  {
+    title: "Cloud",
+    icon: <Cloud className="w-5 h-5 text-sky-600" />,
+    skills: ["AWS", "Microsoft Azure"],
   },
 ];
 
@@ -62,7 +73,7 @@ export default function Skills() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
       },
     },
   };
@@ -82,9 +93,6 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-20 relative bg-[#f8fafc]">
-      {/* Decorative Blob */}
-      <div className="absolute top-[30%] right-[5%] w-[25vw] h-[25vw] rounded-full bg-indigo-600/5 blur-[100px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -95,7 +103,7 @@ export default function Skills() {
             transition={{ duration: 0.5 }}
             className="text-xs font-semibold tracking-wider text-indigo-600 uppercase font-mono"
           >
-            My Toolbox
+            Technical Stack
           </motion.h2>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -104,49 +112,49 @@ export default function Skills() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-slate-900"
           >
-            Skills and <span className="text-gradient-primary">Technologies</span>
+            Skills & <span className="text-gradient-primary">Technologies</span>
           </motion.h3>
-          <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-            A comprehensive list of core languages, artificial intelligence libraries, full-stack frameworks, and databases that I leverage to build modern solutions.
+          <p className="mt-4 text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
+            Core languages, engineering concepts, frameworks, databases, and DevOps tools leveraged in building reliable software applications.
           </p>
         </div>
 
-        {/* Skill Groups Grid */}
+        {/* Skill Category Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left"
         >
           {skillCategories.map((category, idx) => (
             <motion.div
               key={idx}
               variants={cardVariants}
-              className="p-6 rounded-2xl glass-card flex flex-col h-full"
+              className="p-6 rounded-2xl glass-card flex flex-col justify-between hover:border-indigo-600/30 transition-all duration-300 h-full"
             >
-              {/* Category Header */}
-              <div className="flex items-center gap-3 mb-6 pb-3 border-b border-black/5">
-                <div className="p-2 rounded-lg bg-slate-900/5 border border-slate-900/5">
-                  {category.icon}
+              <div>
+                {/* Category Header */}
+                <div className="flex items-center gap-3 mb-5 pb-3 border-b border-black/5">
+                  <div className="p-2 rounded-xl bg-slate-900/5 border border-slate-900/5">
+                    {category.icon}
+                  </div>
+                  <h4 className="font-bold text-slate-900 text-base tracking-wide">
+                    {category.title}
+                  </h4>
                 </div>
-                <h4 className="font-semibold text-slate-900 text-base tracking-wide">
-                  {category.title}
-                </h4>
-              </div>
 
-              {/* Skills Items */}
-              <div className="flex flex-wrap gap-2.5 content-start flex-grow">
-                {category.skills.map((skill, sIdx) => (
-                  <motion.span
-                    key={sIdx}
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="px-3 py-1.5 rounded-xl bg-slate-900/5 border border-slate-900/5 text-sm font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50/50 hover:border-indigo-200/50 transition-all duration-200 cursor-default"
-                  >
-                    {skill.name}
-                  </motion.span>
-                ))}
+                {/* Skills Badges */}
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="px-3 py-1.5 rounded-xl bg-slate-900/5 border border-slate-900/5 text-xs font-medium text-slate-700 hover:text-indigo-600 hover:bg-indigo-50/50 hover:border-indigo-200/50 transition-all duration-200 cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

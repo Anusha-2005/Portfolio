@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Code2, Trophy, Users, Star, Sparkles, Globe } from "lucide-react";
-import confetti from "canvas-confetti";
+import { Award, Code2, Trophy, Users, Star, GraduationCap } from "lucide-react";
 
 interface Achievement {
   title: string;
@@ -14,77 +13,50 @@ interface Achievement {
 
 const achievements: Achievement[] = [
   {
-    title: "LeetCode Solver",
+    title: "Academic Excellence",
+    metric: "9.43 / 10 CGPA",
+    subtext: "K L University",
+    description: "Maintained a consistently outstanding academic record across computer science and engineering coursework.",
+    icon: <GraduationCap className="w-6 h-6 text-indigo-600" />,
+  },
+  {
+    title: "LeetCode Problem Solver",
     metric: "100+ Solved",
     subtext: "Data Structures & Algorithms",
-    description: "Successfully solved over 100 coding challenges on LeetCode covering stacks, trees, dynamic programming, and binary search.",
-    icon: <Code2 className="w-6 h-6 text-orange-500" />,
+    description: "Solved 100+ algorithmic problems covering arrays, trees, dynamic programming, stacks, and binary search.",
+    icon: <Code2 className="w-6 h-6 text-amber-500" />,
   },
   {
-    title: "CodeChef Competitor",
-    metric: "1 Star coder",
-    subtext: "Competitive Programming",
-    description: "Participated in monthly coding contests, practicing high-speed algorithmic thinking, complexity optimization, and debugging.",
-    icon: <Star className="w-6 h-6 text-yellow-500" />,
-  },
-  {
-    title: "Smart Interviews",
-    metric: "Top 300",
-    subtext: "Ranked among participants",
-    description: "Ranked in the top tier of competitive coding sprints during the comprehensive Smart Interviews academy training.",
+    title: "Smart Interviews Program",
+    metric: "Selected",
+    subtext: "Rigorous Training",
+    description: "Selected for the Smart Interviews program focusing on advanced algorithms, data structures, and problem-solving.",
     icon: <Trophy className="w-6 h-6 text-indigo-500" />,
   },
   {
-    title: "University Hackathons",
+    title: "CodeChef Competitor",
+    metric: "1-Star Rating",
+    subtext: "Competitive Programming",
+    description: "Participated in monthly coding contests, building algorithmic agility and optimization skills under timed constraints.",
+    icon: <Star className="w-6 h-6 text-yellow-500" />,
+  },
+  {
+    title: "Hackathon Participant",
     metric: "Collaborator",
-    subtext: "Leadership & Sprints",
-    description: "Participated in university hackathons, collaborating with teams to develop innovative software solutions.",
+    subtext: "Team Sprints",
+    description: "Participated in university hackathons, collaborating in fast-paced software development sprints to create functional apps.",
     icon: <Users className="w-6 h-6 text-blue-500" />,
   },
   {
-    title: "Aparmaya Club Core Member",
-    metric: "Core Organizer",
-    subtext: "KL University Leadership",
-    description: "Contributed to organizing technical events and student engagement activities as a core member of the Aparmaya Club.",
+    title: "Aparmaya Club Leadership",
+    metric: "Core Member",
+    subtext: "K L University",
+    description: "Organized technical events, club activities, and peer student engagement initiatives across campus.",
     icon: <Award className="w-6 h-6 text-purple-500" />,
-  },
-  {
-    title: "Surabhi International Fest",
-    metric: "Volunteer",
-    subtext: "Event Coordination",
-    description: "Assisted in event coordination and participant management during the Surabhi International Fest.",
-    icon: <Globe className="w-6 h-6 text-teal-500" />,
   },
 ];
 
 export default function Achievements() {
-  const triggerConfetti = () => {
-    // Custom blue and purple palette confetti
-    const end = Date.now() + 0.8 * 1000;
-    const colors = ["#3b82f6", "#6366f1", "#8b5cf6", "#a855f7"];
-
-    (function frame() {
-      confetti({
-        particleCount: 4,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0, y: 0.8 },
-        colors: colors,
-      });
-      confetti({
-        particleCount: 4,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1, y: 0.8 },
-        colors: colors,
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
-  };
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -105,9 +77,6 @@ export default function Achievements() {
 
   return (
     <section id="achievements" className="py-20 relative bg-[#f8fafc]">
-      {/* Decorative Blob */}
-      <div className="absolute bottom-[10%] left-[10%] w-[25vw] h-[25vw] rounded-full bg-blue-600/5 blur-[100px] pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Heading */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -129,19 +98,9 @@ export default function Achievements() {
           >
             Key <span className="text-gradient-primary">Achievements</span>
           </motion.h3>
-          <p className="mt-4 text-gray-600 max-w-xl mx-auto">
-            Algorithmic milestones and community engagements. Click the celebration trigger below to celebrate these accomplishments!
+          <p className="mt-4 text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
+            Academic distinction, competitive programming accomplishments, and technical leadership milestones.
           </p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={triggerConfetti}
-            className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-600/10 hover:bg-indigo-600/20 text-indigo-600 border border-indigo-600/30 text-xs font-mono transition-all duration-200 cursor-pointer"
-          >
-            <Sparkles className="w-4 h-4" />
-            <span>Trigger Celebration</span>
-          </motion.button>
         </div>
 
         {/* Achievements Grid */}
@@ -156,21 +115,20 @@ export default function Achievements() {
             <motion.div
               key={idx}
               variants={cardVariants}
-              onClick={triggerConfetti}
-              className="p-6 rounded-2xl glass-card flex flex-col justify-between cursor-pointer select-none group"
+              className="p-6 sm:p-8 rounded-2xl glass-card flex flex-col justify-between border border-slate-900/10 hover:border-indigo-600/30 transition-all duration-300 group"
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <div className="p-2.5 rounded-xl bg-slate-900/5 border border-slate-900/5 group-hover:bg-indigo-600/10 group-hover:border-indigo-600/20 transition-all duration-300">
+                  <div className="p-3 rounded-xl bg-slate-900/5 border border-slate-900/5 group-hover:bg-indigo-600/10 group-hover:border-indigo-600/20 transition-all duration-300">
                     {ach.icon}
                   </div>
-                  <span className="text-[10px] font-mono text-gray-500 group-hover:text-indigo-400 transition-colors uppercase tracking-wider">
+                  <span className="text-[10px] font-mono font-semibold text-slate-500 uppercase tracking-wider">
                     {ach.subtext}
                   </span>
                 </div>
 
                 <div className="space-y-1">
-                  <div className="text-2xl font-extrabold text-white text-gradient-primary">
+                  <div className="text-2xl font-extrabold text-slate-900 text-gradient-primary">
                     {ach.metric}
                   </div>
                   <h4 className="text-base font-bold text-slate-900 tracking-wide">
@@ -178,7 +136,7 @@ export default function Achievements() {
                   </h4>
                 </div>
 
-                <p className="text-sm text-gray-600 leading-relaxed pt-2">
+                <p className="text-sm text-slate-600 leading-relaxed pt-1">
                   {ach.description}
                 </p>
               </div>
