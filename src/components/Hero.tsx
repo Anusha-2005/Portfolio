@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Terminal as TerminalIcon, FileText } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { useEffect, useState, useMemo } from "react";
 import { GithubIcon } from "./Icons";
 
@@ -156,17 +156,12 @@ export default function Hero() {
         >
           <div className="w-full max-w-lg rounded-2xl glass-card overflow-hidden shadow-2xl relative">
             {/* Terminal Header */}
-            <div className="px-4 py-3 bg-[#0d0d1b]/90 border-b border-white/10 flex items-center justify-between">
+            <div className="px-4 py-3 bg-[#0d0d1b]/90 border-b border-white/10 flex items-center">
               <div className="flex gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/60" />
                 <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
                 <span className="w-3 h-3 rounded-full bg-green-500/60" />
               </div>
-              <div className="flex items-center gap-1.5 text-xs text-gray-400 font-mono">
-                <TerminalIcon className="w-3.5 h-3.5 text-indigo-400" />
-                <span>anusha@dev: ~/workspace</span>
-              </div>
-              <div className="w-8" />
             </div>
 
             {/* Terminal Content */}
