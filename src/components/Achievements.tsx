@@ -20,7 +20,7 @@ const achievements: Achievement[] = [
     icon: <GraduationCap className="w-6 h-6 text-indigo-600" />,
   },
   {
-    title: "LeetCode Problem Solver",
+    title: "DSA & Problem Solving",
     metric: "100+ Solved",
     subtext: "Data Structures & Algorithms",
     description: "Solved 100+ algorithmic problems covering arrays, trees, dynamic programming, stacks, and binary search.",
@@ -34,9 +34,9 @@ const achievements: Achievement[] = [
     icon: <Trophy className="w-6 h-6 text-indigo-500" />,
   },
   {
-    title: "CodeChef Competitor",
-    metric: "1-Star Rating",
-    subtext: "Competitive Programming",
+    title: "Coding Contests",
+    metric: "Active Competitor",
+    subtext: "Algorithmic Challenges",
     description: "Participated in monthly coding contests, building algorithmic agility and optimization skills under timed constraints.",
     icon: <Star className="w-6 h-6 text-yellow-500" />,
   },
@@ -99,7 +99,7 @@ export default function Achievements() {
             Key <span className="text-gradient-primary">Achievements</span>
           </motion.h3>
           <p className="mt-4 text-slate-600 max-w-xl mx-auto text-sm sm:text-base">
-            Academic distinction, competitive programming accomplishments, and technical leadership milestones.
+            Academic distinction, algorithmic problem-solving accomplishments, and technical leadership milestones.
           </p>
         </div>
 

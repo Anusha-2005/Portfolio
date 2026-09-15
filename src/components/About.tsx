@@ -10,7 +10,7 @@ interface QuickStat {
 
 const stats: QuickStat[] = [
   { value: "9.43", label: "CGPA (K L University)" },
-  { value: "100+", label: "LeetCode Solved" },
+  { value: "100+", label: "DSA Problems Solved" },
   { value: "80.3%", label: "Class XII CBSE" },
   { value: "2023–Present", label: "B.Tech CSE" },
 ];
