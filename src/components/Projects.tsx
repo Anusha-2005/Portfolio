@@ -35,13 +35,13 @@ const projects: Project[] = [
     title: "Employee Attrition & Workforce Analytics",
     subtitle: "Predictive Analytics & Power BI Dashboard",
     description:
-      "A workforce analytics project that models employee turnover risks using Python and Machine Learning, featuring interactive Power BI visual dashboards for data-driven HR insights.",
+      "Built an interactive Power BI dashboard to analyze employee attrition across departments, roles, age groups, and overtime. Created DAX measures and slicers for dynamic workforce analysis.",
     image: "/pipeline.png",
-    techStack: ["Python", "Power BI", "SQL", "Scikit-learn", "Data Analytics"],
+    techStack: ["Power BI", "DAX", "Python", "SQL", "Scikit-learn", "Data Analytics"],
     keyContributions: [
+      "Built an interactive Power BI dashboard to analyze employee attrition across departments, roles, age groups, and overtime.",
+      "Created DAX measures and slicers for dynamic workforce analysis.",
       "Analyzed workforce demographic and performance metrics to uncover primary employee attrition factors.",
-      "Built predictive Machine Learning models using Python and Scikit-learn to score turnover risk.",
-      "Designed interactive Power BI visual dashboards for executive workforce decision-making.",
     ],
     githubLink: "https://github.com/Anusha-2005/Employee-Attrition-Workforce-Analytics.git",
   },
