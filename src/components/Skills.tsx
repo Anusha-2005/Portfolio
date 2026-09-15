@@ -51,9 +51,9 @@ const skillCategories: SkillCategory[] = [
     skills: ["MySQL", "MongoDB"],
   },
   {
-    title: "DevOps / Tools",
+    title: "DevOps & Tools",
     icon: <Terminal className="w-5 h-5 text-amber-600" />,
-    skills: ["Git", "GitHub Actions", "Docker", "VS Code"],
+    skills: ["Git", "GitHub Actions", "Docker", "Power BI", "VS Code"],
   },
   {
     title: "AI / ML",
