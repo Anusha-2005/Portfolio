@@ -60,7 +60,7 @@ export default function About() {
               </div>
 
               <p className="text-slate-700 text-base leading-relaxed">
-                I&apos;m a Computer Science undergraduate at K L University with a 9.43 CGPA. My interests span software engineering, backend development, APIs, cloud technologies, and machine learning. I enjoy turning ideas into functional applications and continuously improving my problem-solving and engineering skills.
+                Computer Science Engineering student specializing in Data Engineering for AI with strong foundations in Python, SQL, Machine Learning, and Data Analysis also developing predictive models, analyzing datasets, and building solutions to solve real-world problems. Passionate about AI and data-driven insights while continuously learning emerging technologies.
               </p>
             </div>
 
