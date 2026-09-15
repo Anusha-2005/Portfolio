@@ -14,12 +14,12 @@ export default function Resume() {
     },
     {
       degree: "Senior Secondary (Class XII CBSE)",
-      institution: "Central Board of Secondary Education",
+      institution: "Sarla Higher Secondary School",
       duration: "Completed 2023",
       grade: "Percentage: 80.3%",
     },
     {
-      degree: "Secondary School (Class X)",
+      degree: "Secondary School (Class X CBSE)",
       institution: "Sarla Higher Secondary School",
       duration: "Completed 2021",
       grade: "Percentage: 85%",
