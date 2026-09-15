@@ -20,6 +20,13 @@ export default function Resume() {
       grade: "Percentage: 80.3%",
       details: "Mathematics, Physics, Chemistry, and Computer Science fundamentals.",
     },
+    {
+      degree: "Secondary School (Class X)",
+      institution: "Sarla Higher Secondary School",
+      duration: "Completed 2021",
+      grade: "Percentage: 85%",
+      details: "Achieved 85% with a strong foundation in Mathematics, Science, and core academics.",
+    },
   ];
 
   return (
